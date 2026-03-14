@@ -30,7 +30,7 @@ const LoginPage = () => {
       toast.success(data.message || 'Login successful', { id: t })
       setEmail('')
       setPassword('')
-      navigate('/dashboard')
+      navigate('/')
     } catch (err) {
       const msg = err.response?.data?.message || err.message || 'Login failed'
       toast.error(msg, { id: t })

@@ -29,6 +29,7 @@ const SystemForm = ({ initialValues, onSubmit, onCancel }) => {
     try {
       const formData = new FormData()
       formData.append('image', file)
+      formData.append('isLogo', 'true')
       const { data } = await apiHelper.post('/api/images/upload', formData)
       if (data?.success && data?.data?.urlPath) {
         setLogoUrl(data.data.urlPath)
